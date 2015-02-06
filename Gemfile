@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'chef', '~> 11.12'
-gem 'berkshelf', '~> 3.1.2'
+gem 'berkshelf', '~> 3.2.3'
 gem 'thor-foodcritic', '~> 1.1.0'
 gem 'thor-scmversion', '~> 1.7.0'
 gem 'test-kitchen', '~> 1.3.1'
