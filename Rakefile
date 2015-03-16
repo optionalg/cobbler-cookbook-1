@@ -3,20 +3,19 @@ require 'bundler/setup'
 
 # Style tests. Rubocop and Foodcritic
 namespace :style do
+  require 'rubocop/rake_task'
+  desc 'Run Ruby style checks'
+  RuboCop::RakeTask.new(:ruby)
 
- require 'rubocop/rake_task'
- desc 'Run Ruby style checks'
- RuboCop::RakeTask.new(:ruby)
-
- require 'foodcritic'
- desc 'Run Chef style checks'
- FoodCritic::Rake::LintTask.new(:chef) do |t|
-  t.options = {
-   fail_tags: ['any'],
-   # tags: [
-   #      ]
-   }
- end
+  require 'foodcritic'
+  desc 'Run Chef style checks'
+  FoodCritic::Rake::LintTask.new(:chef) do |t|
+    t.options = {
+      fail_tags: ['any'],
+      # tags: [
+      #      ]
+    }
+  end
 end
 
 desc 'Run all style checks'
@@ -29,10 +28,10 @@ RSpec::Core::RakeTask.new(:spec)
 
 require 'kitchen'
 desc 'Run Test Kitchen integration tests'
- task :integration do
+task :integration do
   Kitchen.logger = Kitchen.default_file_logger
   Kitchen::Config.new.instances.each do |instance|
-   instance.test(:always)
+    instance.test(:always)
   end
 end
 
