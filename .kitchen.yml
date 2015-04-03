@@ -2,7 +2,7 @@
 driver:
   name: vagrant
   require_chef_omnibus: false
-  vm_hostname: '<cookbook name with hyphens>.kitchen.altiscale.com'
+  vm_hostname: 'alti_skeleton.kitchen.altiscale.com'
   network:
   - ['private_network', {ip: '10.10.10.99'}]
   customize:
