@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: alti-skeleton-cookbook
+# Cookbook Name:: alti_skeleton
 # Recipe:: default
 #
 # Copyright (C) 2015 YOUR_NAME

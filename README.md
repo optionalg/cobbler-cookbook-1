@@ -1,4 +1,4 @@
-# alti-skeleton-cookbook-cookbook
+# alti_skeleton-cookbook
 
 TODO: Enter the cookbook description here.
 
@@ -16,7 +16,7 @@ centos
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['alti-skeleton-cookbook']['bacon']</tt></td>
+    <td><tt>['alti_skeleton']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -25,14 +25,14 @@ centos
 
 ## Usage
 
-### alti-skeleton-cookbook::default
+### alti_skeleton::default
 
-Include `alti-skeleton-cookbook` in your node's `run_list`:
+Include `alti_skeleton` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[alti-skeleton-cookbook::default]"
+    "recipe[alti_skeleton::default]"
   ]
 }
 ```
