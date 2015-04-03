@@ -1,7 +1,7 @@
 # encoding: UTF-8
 require 'spec_helper'
 
-describe '<cookbook name>::default' do
+describe 'alti_skeleton::default' do
   let(:chef_run) do
     ChefSpec::ServerRunner.new do # |node|
     end.converge(described_recipe)
