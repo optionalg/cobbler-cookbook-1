@@ -25,4 +25,5 @@ platforms:
 suites:
   - name: default
     run_list:
+    - recipe[alti_pipeline_lib::default]
     - recipe[alti_skeleton::default]
