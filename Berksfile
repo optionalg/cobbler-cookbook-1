@@ -25,3 +25,6 @@ end
 source 'http://api.berkshelf.com'
 
 metadata
+
+# alti_pipeline_lib-cookbook is only for use with test-kitchen
+verticloud 'alti_pipeline_lib', '~> 0.0.1'
