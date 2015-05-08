@@ -13,3 +13,7 @@ version IO.read(File.join(File.dirname(__FILE__), 'VERSION'))
   provides rec
   recipe rec, desc
 end
+
+JSON.parse(File.read(File.join(File.dirname(__FILE__), 'depends.json'))).each_pair do |cbk,ver|
+  depends cbk,ver
+end
