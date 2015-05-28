@@ -27,7 +27,7 @@ namespace :alti do
       puts 'No Chef environment configured'
       exit false
     end
-    puts `berks install || berks apply`
+    puts `berks install || berks update`
     exit false unless $CHILD_STATUS == 0
   end
 end
