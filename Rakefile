@@ -1,5 +1,6 @@
 # encoding: UTF-8
 require 'bundler/setup'
+require 'English'
 
 # Style tests. Rubocop and Foodcritic
 namespace :style do
@@ -16,6 +17,18 @@ namespace :style do
         '~FC007'
       ]
     }
+  end
+end
+
+namespace :alti do
+  desc 'Attempt a berks install or update'
+  task :berks do
+    unless ENV['BERKSHELF_CONFIG'] && File.exist?(ENV['BERKSHELF_CONFIG'])
+      puts 'No Chef environment configured'
+      exit false
+    end
+    puts `berks install || berks update`
+    exit false unless $CHILD_STATUS == 0
   end
 end
 
@@ -37,4 +50,4 @@ task :integration do
 end
 
 # The default rake task should just run it all
-task default: %w(spec style integration)
+task default: %w(spec style alti:berks integration)
