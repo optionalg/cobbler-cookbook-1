@@ -16,7 +16,7 @@ centos
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['alti_skeleton']['bacon']</tt></td>
+    <td><tt>['alti']['skeleton']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
