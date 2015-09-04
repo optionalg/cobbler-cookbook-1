@@ -38,7 +38,9 @@ task style: ['style:chef', 'style:ruby']
 # Rspec and ChefSpec
 require 'rspec/core/rake_task'
 desc 'Run ChefSpec examples'
-RSpec::Core::RakeTask.new(:spec)
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.rspec_opts = '-f JUnit -o results.xml'
+end
 
 require 'kitchen'
 desc 'Run Test Kitchen integration tests'
