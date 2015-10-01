@@ -8,6 +8,8 @@ driver:
   customize:
     natdnsproxy1: 'off'
     natdnshostresolver1: 'off'
+    memory: 2048
+    cpus: 2
 
 provisioner:
   name: chef_zero
