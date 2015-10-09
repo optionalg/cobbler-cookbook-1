@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf', '~> 3.2.4'
-gem 'berkshelf-api-client', '~> 1.2.1'
+gem 'berkshelf', '~> 4.0.0'
+gem 'berkshelf-api-client', '~> 2.0.0'
 gem 'chef', '~> 11.12'
 gem 'chefspec', '~> 4.2.0'
 gem 'hashie', '~> 2.1.2'
