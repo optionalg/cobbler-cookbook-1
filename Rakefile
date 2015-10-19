@@ -39,7 +39,7 @@ task style: ['style:chef', 'style:ruby']
 require 'rspec/core/rake_task'
 desc 'Run ChefSpec examples'
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.rspec_opts = '-f JUnit -o results.xml'
+  t.rspec_opts = '-f progress -f JUnit -o results.xml'
 end
 
 require 'kitchen'
