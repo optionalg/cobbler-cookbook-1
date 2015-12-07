@@ -1,0 +1,53 @@
+# Settings common to all Cops.
+AllCops:
+  # Check Rakefile for not gemspec.
+  Include:
+    - '**/Rakefile'
+    - '**/Berksfile'
+
+  Exclude:
+    - '**/*.gemspec'
+    - '**/metadata.rb'
+
+# Default was 10.  Changed to 24 for sanity reasons and to keep it a power
+# of 2.  (I use base six, don't you?)
+MethodLength:
+  Max: 24
+
+# Explicit returns often make code more readable.  This Cop complains
+# about them and prefers the Ruby way of returning the last assigned
+# value in the top level scope.
+RedundantReturn:
+  Enabled: False
+
+# Don't complain about not having underscores in long numbers.
+NumericLiterals:
+  Enabled: false
+
+# The difference between 'raise' and 'fail' is simply semantic.
+# There is no functional difference.  The documentation in the
+# Kernel module for both these methods is identical and they run
+# the same code.
+#
+# Consider the following:
+#
+# fail(MyException, 'you are in error')
+# raise(MyException, 'you are in error')
+#
+# The former is correct according to this Cop, but the latter makes
+# more sense semantically.
+SignalException:
+  Enabled: false
+
+# I don't work on a vt100 any more
+LineLength:
+  Max: 100
+
+# Disable Assignment Branch Complexity score
+AbcSize:
+  Enabled: false
+
+# We already have a CyclomaticComplexity.  PerceivedComplexity just adds
+# confusion... thus altering your perception of how complex Rubocop is...
+PerceivedComplexity:
+  Enabled: false
