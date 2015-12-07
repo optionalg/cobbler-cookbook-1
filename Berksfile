@@ -1,3 +1,3 @@
-source 'https://berks-api-staging.test.altiscale.com'
+source 'https://supermarket.chef.io'
 
 metadata
