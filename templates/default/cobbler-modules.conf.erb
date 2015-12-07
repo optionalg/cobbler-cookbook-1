@@ -1,0 +1,15 @@
+
+[authentication]
+module = <%= node[:cobbler][:module][:authentication] %>
+
+[authorization]
+module = <%= node[:cobbler][:module][:authorization] %>
+
+[dns]
+module = <%= node[:cobbler][:module][:dhcp] %>
+
+[dhcp]
+module = <%= node[:cobbler][:module][:dhcp] %>
+
+[tftpd]
+module = <%= node[:cobbler][:module][:tftpd] %>
