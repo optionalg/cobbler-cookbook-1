@@ -12,7 +12,7 @@ default[:cobbler][:web][:root] = '/var/www/cobbler/web'
 
 # XMLRPC parameters
 default[:cobbler][:xmlrpc_hostname] = '127.0.0.1'
-default[:cobbler][:hostname] = 'cobbler'
-default[:cobbler][:password] = 'cobbler'
+default[:cobbler][:hostname] = ''
+default[:cobbler][:password] = ''
 default[:cobbler][:secure] = false
 default[:cobbler][:timeout] = 30

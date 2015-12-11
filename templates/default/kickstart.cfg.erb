@@ -1,0 +1,26 @@
+#!/bin/bash
+# Kickstart for RHEL/CentOS 6
+# see: http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-kickstart2-options.html
+
+install
+url --url=<%= @params[:repo_url] %>
+cmdline
+lang en_US.UTF-8
+keyboard us
+rootpw <%= @params[:root_password] %>
+network --hostname <%= @params[:hostname] || node.hostname %>
+firewall --enabled --ssh
+authconfig --enableshadow --passalgo=sha512 --enablefingerprint
+timezone --utc <%= @params[:timezone] || 'UTC' %>
+
+%pre
+<%= @params[:pre_script] %>
+%end
+
+%post
+<%= @params[:post_script] %>
+%end
+
+%packages
+<%= @params[:packages].join("\n") if @params[:packages] %>
+%end

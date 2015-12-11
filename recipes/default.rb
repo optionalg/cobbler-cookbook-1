@@ -13,16 +13,8 @@ include_recipe 'cobbler::apache'
 conf_dir = node[:cobbler][:conf_dir]
 cobbler_service = node[:cobbler][:service_name]
 
-# TODO: This needs to use yum repo
-remote_file '/var/tmp/cobbler.rpm' do
-  source 'http://download.opensuse.org/repositories/home:/libertas-ict:/cobbler26/CentOS_CentOS-6/noarch/cobbler-2.6.10-11.1.noarch.rpm'
-  action :create_if_missing
-end
-
-package 'cobbler' do
-  version '2.6.10'
-  source '/var/tmp/cobbler.rpm'
-end
+package 'syslinux'
+package 'cobbler'
 
 template "#{conf_dir}/settings" do
   source 'cobbler-settings.erb'

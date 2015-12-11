@@ -2,7 +2,7 @@
 driver:
   name: vagrant
   require_chef_omnibus: false
-  vm_hostname: 'alti-cookbook-test.kitchen.altiscale.com'
+  vm_hostname: 'alti-cobbler-test.kitchen.altiscale.com'
   network:
   - ['private_network', {ip: '10.10.10.99'}]
   customize:
@@ -22,7 +22,7 @@ platforms:
   - name: prometheus-6.5.11
     driver_config:
       box: prometheus-6.5.11-201509222220
-      box_url: https://s3-us-west-1.amazonaws.com/com.altiscale.vagrant/prometheus/boxes/prometheus-6.5.11-201509222220.box?AWSAccessKeyId=AKIAIKOVEEW6FVT5JBQA&Expires=1758540162&Signature=NKM7r5d24o02JzTBKAXiYBW6BIE%3D 
+      box_url: https://s3-us-west-1.amazonaws.com/com.altiscale.vagrant/prometheus/boxes/prometheus-6.5.11-201509222220.box?AWSAccessKeyId=AKIAIKOVEEW6FVT5JBQA&Expires=1758540162&Signature=NKM7r5d24o02JzTBKAXiYBW6BIE%3D
 
 suites:
   - name: default
