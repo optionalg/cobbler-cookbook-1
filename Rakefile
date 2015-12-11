@@ -14,7 +14,8 @@ namespace :style do
     t.options = {
       fail_tags: ['any'],
       tags: [
-        '~FC007'
+        '~FC007',
+        '~FC015'
       ]
     }
   end

@@ -19,16 +19,16 @@ describe 'cobbler::default' do
     expect(chef_run).to create_directory('/var/lib/tftpboot')
   end
 
-  # it 'should enable xinetd_service' do
-  #   expect(chef_run).to enable_xinetd_service()
-  # end
-
   it 'should create cookbook file menu.c32' do
     expect(chef_run).to create_cookbook_file('/var/lib/tftpboot/menu.c32')
   end
 
-  it 'should create cookbook file menu.c32' do
+  it 'should create cookbook file pxelinux.0' do
     expect(chef_run).to create_cookbook_file('/var/lib/tftpboot/pxelinux.0')
+  end
+
+  it 'should install syslinux' do
+    expect(chef_run).to install_package('syslinux')
   end
 
   it 'should install package cobbler' do
