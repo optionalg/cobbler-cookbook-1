@@ -46,8 +46,8 @@ end
 
 def perform_image_import
   mount_point = ::File.join(Chef::Config[:file_cache_path], 'mnt')
-  target_iso = ::File.join(Chef::Config[:file_cache_path], \
-    "#{new_resource.name}#{::File.extname(new_resource.source)}")
+  iso_name = "#{new_resource.name}#{::File.extname(new_resource.source)}"
+  target_iso = ::File.join(Chef::Config[:file_cache_path], iso_name)
 
   # Create the directory where iso should be mounted
   directory "#{new_resource.name}-mount_point" do

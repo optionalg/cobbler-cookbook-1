@@ -20,7 +20,7 @@ module CobblerReader
     items = []
     begin
       items = connection.call(cobbler_method)
-    rescue Exception => e
+    rescue
       return false
     end
     items.each do | item |

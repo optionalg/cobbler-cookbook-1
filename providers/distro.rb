@@ -84,7 +84,6 @@ def generate_cmd(action)
 end
 
 def perform_distro(action)
-
   directory distro_resources_path do
     recursive true
   end
