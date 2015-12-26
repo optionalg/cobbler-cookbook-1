@@ -11,5 +11,5 @@ end
 
 # Create the site cobbler using, its wrapped with <virtual
 web_app 'cobbler' do
-  template 'cobbler-httpd.erb'
+  template 'cobbler-httpd.erb'  
 end

@@ -19,10 +19,10 @@ busser:
   ruby_bindir: /usr/bin
 
 platforms:
-  - name: prometheus-6.5.11
+  - name: prometheus-6.6.0
     driver_config:
-      box: prometheus-6.5.11-201509222220
-      box_url: https://s3-us-west-1.amazonaws.com/com.altiscale.vagrant/prometheus/boxes/prometheus-6.5.11-201509222220.box?AWSAccessKeyId=AKIAIKOVEEW6FVT5JBQA&Expires=1758540162&Signature=NKM7r5d24o02JzTBKAXiYBW6BIE%3D
+      box: prometheus-6.6.0-201507161802
+      box_url: https://s3-us-west-1.amazonaws.com/com.altiscale.vagrant/prometheus/boxes/prometheus-6.6.0-201507161802.box?AWSAccessKeyId=AKIAIKOVEEW6FVT5JBQA&Expires=1752649955&Signature=aGC2AvL9oAME0usGfwVgyTxKjec%3D
 
 suites:
   - name: default

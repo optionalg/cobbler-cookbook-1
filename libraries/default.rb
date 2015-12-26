@@ -17,7 +17,12 @@ module CobblerReader
   private
 
   def cobbler_search_name(cobbler_method, search_item_name)
-    items = connection.call(cobbler_method)
+    items = []
+    begin
+      items = connection.call(cobbler_method)
+    rescue Exception => e
+      return false
+    end
     items.each do | item |
       next unless item['name'] == search_item_name
       return item
