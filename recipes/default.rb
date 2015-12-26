@@ -36,3 +36,7 @@ service cobbler_service do
   service_name 'cobblerd'
   action [:enable, :start]
 end
+
+service 'httpd' do
+  action :restart
+end

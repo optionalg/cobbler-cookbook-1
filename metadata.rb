@@ -1,6 +1,6 @@
 name 'cobbler'
-maintainer 'Bubba Nohead'
-maintainer_email '<headless>@altiscale.com'
+maintainer 'karthik kumar'
+maintainer_email 'karthik@altiscale.com'
 license 'All rights reserved'
 description 'Installs/Configures cobbler'
 long_description long_description IO.read(File.join(File.dirname(__FILE__),

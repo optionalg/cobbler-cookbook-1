@@ -38,7 +38,7 @@ def perform_mount(target_iso, mount_point)
     device target_iso
     options 'loop'
     fstype 'iso9660'
-    options %w(loop, ro)
+    options %w(loop ro)
     action :mount
     only_if { ::File.exist? target_iso }
   end
@@ -46,8 +46,8 @@ end
 
 def perform_image_import
   mount_point = ::File.join(Chef::Config[:file_cache_path], 'mnt')
-  target_iso = ::File.join(Chef::Config[:file_cache_path], "#{new_resource.name}
-    #{::File.extname(new_resource.source)}")
+  target_iso = ::File.join(Chef::Config[:file_cache_path], \
+    "#{new_resource.name}#{::File.extname(new_resource.source)}")
 
   # Create the directory where iso should be mounted
   directory "#{new_resource.name}-mount_point" do
