@@ -48,6 +48,6 @@ describe 'cobbler::default' do
   end
 
   it 'should restart httpd' do
-    expect(chef_run).to start_service('httpd')
+    expect(chef_run).to restart_service('httpd')
   end
 end
