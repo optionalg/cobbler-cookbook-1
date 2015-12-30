@@ -1,0 +1,7 @@
+name 'cobbler-tester'
+maintainer 'karthik'
+maintainer_email 'karthik@altiscale.com'
+license 'All rights reserved'
+description 'Simulates knife vault create'
+version '0.1.0'
+depends 'cobbler'

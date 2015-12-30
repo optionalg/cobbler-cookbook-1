@@ -35,8 +35,8 @@ describe 'cobbler::default' do
     expect(chef_run).to install_package('cobbler')
   end
 
-  it 'should create template /etc/cobbler/settings' do
-    expect(chef_run).to create_template('/etc/cobbler/settings')
+  it 'should create file /etc/cobbler/settings' do
+    expect(chef_run).to create_file('/etc/cobbler/settings')
   end
 
   it 'should create template /etc/cobbler/modules.conf' do
@@ -45,5 +45,9 @@ describe 'cobbler::default' do
 
   it 'should start cobblerd service' do
     expect(chef_run).to start_service('cobblerd')
+  end
+
+  it 'should restart httpd' do
+    expect(chef_run).to restart_service('httpd')
   end
 end

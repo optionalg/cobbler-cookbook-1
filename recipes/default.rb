@@ -16,8 +16,8 @@ cobbler_service = node[:cobbler][:service_name]
 package 'syslinux'
 package 'cobbler'
 
-template "#{conf_dir}/settings" do
-  source 'cobbler-settings.erb'
+file "#{conf_dir}/settings" do
+  content node[:cobbler][:settings].to_hash.to_yaml
   owner 'root'
   group 'root'
   mode 0644
