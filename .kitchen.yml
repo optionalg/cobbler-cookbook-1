@@ -27,5 +27,5 @@ platforms:
 suites:
   - name: default
     run_list:
-    - recipe[alti_pipeline_lib::default]
-    - recipe[cobbler::default]
+    - recipe[alti_pipeline_lib::default]      
+    - recipe[cobbler-tester]

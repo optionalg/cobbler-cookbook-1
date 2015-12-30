@@ -15,7 +15,7 @@ define :kickstart_cfg, template: 'kickstart.cfg.erb' do
     owner 'root'
     group 'root'
     mode 0644
-    cookbook params[:cookbook] if params[:cookbook]
+    cookbook params[:cookbook] || 'cobbler'
     variables(
       params: params
     )

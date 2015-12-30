@@ -34,6 +34,16 @@ action :update do
   end
 end
 
+def initrd_path
+  initrd_file_name = ::File.basename(new_resource.initrd)
+  "#{distro_resources_path}/#{initrd_file_name}"
+end
+
+def kernel_path
+  kernel_file_name = ::File.basename(new_resource.kernel)
+  "#{distro_resources_path}/#{kernel_file_name}"
+end
+
 private
 
 def distro_updated?(distro)
@@ -51,11 +61,7 @@ def distro_resources_path
   ::File.join(node[:cobbler][:path], "distros/#{new_resource.name}")
 end
 
-# The user may specify their custom initrd path or kernel path which cobbler
-# distro should updated. This func puts the initrd file and returns its location
-# to be used in 'cobbler distro edit'
 def initrd_setup
-  initrd_path = ::File.join("#{distro_resources_path}/initrd") # TODO: !initrd
   remote_file "#{new_resource.initrd}-initrd_file" do
     path initrd_path
     source new_resource.initrd
@@ -64,7 +70,6 @@ def initrd_setup
 end
 
 def kernel_setup
-  kernel_path = ::File.join("#{distro_resources_path}/vmlinuz") # TODO: !vmlinuz
   remote_file "#{new_resource.initrd}-initrd_file" do
     path kernel_path
     source new_resource.initrd

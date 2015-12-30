@@ -49,6 +49,7 @@ def generate_cmd(action)
   cmd << "cobbler profile #{action} --name=#{new_resource.name}"
   cmd << "--kickstart=#{new_resource.kickstart}" if new_resource.kickstart
   cmd << "--distro=#{new_resource.distro}" if new_resource.distro
+  cmd << "--repos='#{new_resource.repos.join(' ')}'" if new_resource.repos
   cmd.join(' ')
 end
 

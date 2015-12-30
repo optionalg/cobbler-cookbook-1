@@ -14,6 +14,10 @@ module CobblerReader
     cobbler_search_name('get_systems', system_name)
   end
 
+  def get_repo(system_name)
+    cobbler_search_name('get_repos', system_name)
+  end
+
   private
 
   def cobbler_search_name(cobbler_method, search_item_name)
